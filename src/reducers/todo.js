@@ -1,3 +1,5 @@
+import { DELETE_TODO } from "../actions/todos";
+
 const initialState = {
   todos: [
     { id: 1, text: "todo 1", completed: false },
@@ -6,5 +8,14 @@ const initialState = {
 };
 
 export const todo = (state = initialState, action) => {
-  return state;
+  switch (action.type) {
+    case DELETE_TODO:
+      return {
+        ...state,
+        todos: state.todos.filter(todo => todo.id !== action.id)
+      };
+
+    default:
+      return state;
+  }
 };
