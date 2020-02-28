@@ -23,7 +23,7 @@ const Filters = ({ setFilter }) => {
       /
       <button
         onClick={() => {
-          setFilter(FiltersValue.SHOW_ACTIVE);
+          setFilter(FiltersValue.SHOW_UNCOMPLETED);
         }}
       >
         Undone
