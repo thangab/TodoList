@@ -1,7 +1,7 @@
 import { call, put, takeEvery, all, delay } from "redux-saga/effects";
 import { INIT_TODO, FETCH_TODO } from "../actions";
 
-export function* fetchTodo() {
+export function* callApiTodos() {
   try {
     yield delay(2000);
     const response = yield call(fetch, "data.json");
@@ -13,7 +13,7 @@ export function* fetchTodo() {
 }
 
 function* watchFetchTodo() {
-  yield takeEvery(FETCH_TODO, fetchTodo);
+  yield takeEvery(FETCH_TODO, callApiTodos);
 }
 
 export default function* watchSaga() {
