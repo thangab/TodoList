@@ -1,12 +1,11 @@
-import { ADD_TODO, TOGGLE_TODO, DELETE_TODO } from "../actions";
+import { ADD_TODO, TOGGLE_TODO, DELETE_TODO, INIT_TODO } from "../actions";
 
-const initialState = [
-  { id: 1, text: "test1", completed: true },
-  { id: 2, text: "test2", completed: false }
-];
+const initialState = [];
 
 const todos = (state = initialState, action) => {
   switch (action.type) {
+    case INIT_TODO:
+      return action.data;
     case ADD_TODO:
       return [
         ...state,

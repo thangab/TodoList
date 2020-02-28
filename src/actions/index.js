@@ -2,8 +2,14 @@ export const ADD_TODO = "ADD_TODO";
 export const SET_FILTER = "SET_VISIBILITY_FILTER";
 export const TOGGLE_TODO = "TOGGLE_TODO";
 export const DELETE_TODO = "DELETE_TODO";
+export const FETCH_TODO = "FETCH_TODO";
+export const INIT_TODO = "INIT_TODO";
 
-let nextTodoId = 3;
+export const fetchTodos = () => ({ type: FETCH_TODO });
+
+export const initTodos = data => ({ type: INIT_TODO, data });
+
+let nextTodoId = 1000;
 export const addTodo = text => ({
   type: ADD_TODO,
   id: nextTodoId++,
